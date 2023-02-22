@@ -10,13 +10,11 @@ kube_deploy:
 	@echo "Switching to cluster ${KUBE_CLUSTER}"
 	kubectl config use-context ${KUBE_CLUSTER}
 	@echo "Applying manifests with kubernetes"
-	kubectl apply -f deployment.yaml
-	kubectl apply -f service-lb.yaml
+	kubectl apply -f 'deploy/*.yaml'
 
 clean:
 	@echo "Switching to cluster ${KUBE_CLUSTER}"
 	kubectl config use-context ${KUBE_CLUSTER}
 	@echo "Cleaning up..."
-	kubectl delete -f service-lb.yaml
-	kubectl delete -f deployment.yaml
+	kubectl delete -f 'deploy/*.yaml'
 	docker image rm kubernetes-presentation

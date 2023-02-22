@@ -28,6 +28,7 @@ git clone the repo then
   # Open http://localhost in your browser to view the presentation
   # ^ This assumes port 80 is available on your computer for Docker Desktop to bind to
   # ^ If this is not the case on your machine you can connect to the node port instead
+  # ^ See `kubectl get svc`
   ```
 
 ### Why do I need to use Docker Desktop's kubernetes?
