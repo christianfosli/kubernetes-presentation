@@ -6,9 +6,9 @@ Slide deck for a presentation I'm giving.
 
 - [ ] Add remaining slides
 
-- [ ] Add Dockerfile
+- [x] Add Dockerfile
 
-- [ ] Add kubernetes manifests so that we can run the presentation in kubernetes
+- [x] Add kubernetes manifests so that we can run the presentation in kubernetes
 
 ## Run presentation locally
 
@@ -18,10 +18,21 @@ git clone the repo then
 
   ```bash
   npm run dev
+  # Open http://localhost:5173 in your browser to view the presentation
   ```
 
-* OR using kubernetes
+* OR using kubernetes with Docker Desktop
 
   ```bash
-  # TODO
+  make
+  # Open http://localhost in your browser to view the presentation
+  # ^ This assumes port 80 is available on your computer for Docker Desktop to bind to
+  # ^ If this is not the case on your machine you can connect to the node port instead
   ```
+
+### Why do I need to use Docker Desktop's kubernetes?
+
+I didn't push the docker image to a registry and docker desktop makes it simple to
+run docker images built locally in your local kubernetes cluster.
+You could use other kubernetes versions too _if_ they support this (or push the image to some registry).
+I just know that it works out-of-the-box with Docker Desktop's kubernetes.
