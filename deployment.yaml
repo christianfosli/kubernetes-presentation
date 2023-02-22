@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-presentation-deploy
+  labels:
+    app: kubernetes-presentation
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubernetes-presentation
+  template:
+    metadata:
+      labels:
+        app: kubernetes-presentation
+    spec:
+      containers:
+      - name: kubernetes-presentation
+        image: kubernetes-presentation:latest # <-- this is normally not a good idea
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
