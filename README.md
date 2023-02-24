@@ -4,7 +4,7 @@ Slide deck for a presentation I'm giving.
 
 ## TODO
 
-- [ ] Add remaining slides
+- [x] Add remaining slides
 
 - [x] Add Dockerfile
 

@@ -6,6 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="/vite.svg" />
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/reveal.css">
   <link rel="stylesheet" href="/node_modules/reveal.js/dist/theme/black.css">
+  <link rel="stylesheet" href="/node_modules/reveal.js/plugin/highlight/monokai.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kubernetes presentation</title>
 </head>
@@ -24,39 +25,63 @@
 
           * What is kubernetes
 
-          * Kubernetes objects <br />(pod, deployment, cronjob, ingress)
+          * Kubernetes objects <br />(pod, deployment, service, ingress)
 
           * Should I use it in my project?
-
-          * Where to learn more
         </textarea>
       </section>
       <section data-markdown>
         <textarea data-template>
           ## What is kubernetes
 
-          * Platform to run and orchestrate containers.
-          See-also [docs: Why you need kubernetes and what can it
-          do](https://kubernetes.io/docs/concepts/overview/#why-you-need-kubernetes-and-what-can-it-do)
+          * κῠβερνήτης - helmsman <!-- The person who steers a ship -->
 
           * One cluster, many nodes
 
+          * [Why you need kubernetes and what can it
+          do](https://kubernetes.io/docs/concepts/overview/#why-you-need-kubernetes-and-what-can-it-do)
+
           * [Diagram of cluster componentes](https://kubernetes.io/docs/concepts/overview/components/)
+
         </textarea>
       </section>
-      <section data-markdown>
-        <textarea data-template>
-          ## Kubernetes objects
-        </textarea>
+      <section>
+        <br />
+        <br />
+        <h2>Kubernetes objects</h2>
+        <section data-markdown>
+          <textarea data-template>
+
+            * Declared with yaml manifests
+
+            * Sent to kubernetes API Server (usually with kubectl)
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+          ```yaml [|1-2|3-4|5-10]
+          apiVersion: v1
+          kind: Pod
+          metadata:
+            name: nginx
+          spec:
+            containers:
+              - name: nginx
+                image: nginx:1.14.2
+                ports:
+                - containerPort: 80
+          ```
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            Source code for this presentation...
+          </textarea>
+        </section>
       </section>
       <section data-markdown>
         <textarea data-template>
           ## Should I use it in my project?
-        </textarea>
-      </section>
-      <section data-markdown>
-        <textarea data-template>
-          ## Where to learn more
         </textarea>
       </section>
       <footer id="foot">
